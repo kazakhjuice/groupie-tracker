@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Name}} - Artist Page</title>
+    <link rel="stylesheet" href="/static/css/artistStyle.css">
+    <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+</head>
+<body>
+    <a href="/">
+    <header>
+        <h1>{{.Name}}</h1>
+    </header>
+    </a>
+    <section>
+        <img src="{{.ImageURL}}" alt="{{.Name}} Image">
+        <p>Creation Date: {{.CreationDate}}</p>
+        <p>First Album: {{.FirstAlbum}}</p>
+        <p>Members: {{range .Members}}{{.}}, {{end}}</p>
+        
+        <div class="concerts">
+            <h2>Concerts:</h2>
+            <li>
+                {{range $key, $value := .Rel}}
+                    <h3>Location: {{ $key }}</h3>
+                    <h4>Dates:</h2>
+                    {{ range $value }}
+                        <li>{{.}}</li>
+                    {{ end }}
+                {{ end }}    
+            </li>
+        </div>
+        
+    </section>
+    <a href="/"><button class="back-button">Go Back</button></a>
+</body>
+</html>
