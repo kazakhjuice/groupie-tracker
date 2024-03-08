@@ -1,3 +1,5 @@
+## Простой проект написан для Алема без сторонних пакетов. 
+
 # !!! To run server, in terminal write "go run cmd/web/*"
 # After that, to access app, go to http://localhost:8081/
 
